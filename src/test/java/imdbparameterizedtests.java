@@ -43,7 +43,8 @@ public class imdbparameterizedtests {
         // Optional, if not specified, WebDriver will search your path for chromedriver.
         //System.setProperty("webdriver.chrome.driver", "/Users/arturcosta/Documents/Mestrado/chromedriver");
         //driver= new ChromeDriver();
-        baseUrl = "http://www.imdb.com/";
+        baseUrl = "http://localhost:8080/team/";
+        //baseUrl = "http://www.imdb.com/";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
@@ -51,12 +52,15 @@ public class imdbparameterizedtests {
     public void testJavaTeste() throws Exception {
         driver.get(baseUrl + "/");
         //String searchTerm = "Star Wars";
-        driver.findElement(By.id("navbar-query")).clear();
+        /*driver.findElement(By.id("navbar-query")).clear();
         driver.findElement(By.id("navbar-query")).sendKeys(searchTerm);
         driver.findElement(By.id("navbar-submit-button")).click();
-        driver.findElement(By.xpath("//td[2]/a")).click();
+        driver.findElement(By.xpath("//td[2]/a")).click();*/
+        //driver.get(baseUrl + "/team/");
+        driver.findElement(By.linkText("Web page profissional")).click();
         //assertTrue(driver.getTitle().matches("^regexpi:\\.[\\s\\S]*\\$\\{searchTem\\}\\.[\\s\\S]*$"));
-        assertTrue(driver.getTitle().matches(".*" + searchTerm + ".*"));
+        //assertTrue(driver.getTitle().matches(".*" + searchTerm + ".*"));
+        assertTrue(driver.getTitle().matches("ALC Computer - Hardware, Software, Assistência Técnica, Redes, Web Design e Cartões PVC | Página Inicial"));
     }
 
     @After
