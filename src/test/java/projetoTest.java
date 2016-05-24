@@ -29,7 +29,7 @@ public class ProjetoTest {
         baseUrl = "http://localhost:8080/team/";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
-
+//
     @Test
     public void testJavaTeste() throws Exception {
         driver.get(baseUrl + "/");
