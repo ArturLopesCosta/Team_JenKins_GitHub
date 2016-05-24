@@ -29,13 +29,15 @@ public class ProjetoTest {
         baseUrl = "http://localhost:8080/team/";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
-    //classe de test
+
     @Test
     public void testJavaTeste() throws Exception {
         driver.get(baseUrl + "/");
-        driver.findElement(By.linkText("Web page profissional")).click();
+        //driver.findElement(By.linkText("Web page profissional")).click();
         //Assert.assertTrue("erro no link",driver.getTitle().matches(""));
-        Assert.assertEquals("Wrong page title","ALC Computer - Hardware, Software, Assistência Técnica, Redes, Web Design e Cartões PVC | Página Inicial",driver.getTitle());
+        //Assert.assertEquals("Wrong page title","ALC Computer - Hardware, Software, Assistência Técnica, Redes, Web Design e Cartões PVC | Página Inicial",driver.getTitle());
+        driver.findElement(By.linkText("Moodle profissional")).click();
+        Assert.assertEquals("Artur Costa",driver.getTitle());
     }
 
     @After
